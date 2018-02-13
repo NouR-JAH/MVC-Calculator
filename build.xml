@@ -8,6 +8,7 @@
 	
 
 	<target name="compile">
+		<mkdir dir="compilingFiles"/>
 		<javac srcdir="./src" destdir="./compilingFiles" debug="true"  includeantruntime="false" >
 			<classpath>
 				<path refid="NecessaryLibraries"/>
