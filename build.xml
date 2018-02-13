@@ -28,7 +28,7 @@
 			<formatter type="brief" usefile="false"/>
 			<batchtest>
 				<fileset dir="compilingFiles" includes="Testings/test*.class">
-				</fileset>
+					</fileset>
 			</batchtest>
 
 		</junit>
