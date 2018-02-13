@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JUnit testing by NouR and Aya" default="test">
+
+	<path id="NecessaryLibraries">
+	<pathelement location="./MyLibraries/junit.jar"/>
+	<pathelement location="./MyLibraries/hamcrest.jar"/>
+	</path>
+	
+
+	<target name="compile">
+		<javac srcdir="./src" destdir="./compilingFiles" debug="true"  includeantruntime="false" >
+			<classpath>
+				<path refid="NecessaryLibraries"/>
+				<pathelement location="./compilingFiles"/>
+			</classpath>
+		</javac>
+	</target>
+
+
+	<target name="test" depends= "compile">
+		<junit printsummary="on" haltonfailure="true" fork="true">
+			<test name="Testings.testAdd"/>
+			<classpath>
+				<path refid="NecessaryLibraries"/>
+				<pathelement location="compilingFiles"/>
+			</classpath>
+			<formatter type="brief" usefile="false"/>
+			<batchtest>
+				<fileset dir="compilingFiles" includes="Testings/test*.class">
+				</fileset>
+			</batchtest>
+
+		</junit>
+	</target>
+	
+
+
+</project>
